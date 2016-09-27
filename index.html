@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+
+		<!-- <link rel="stylesheet" href="	css/beer.css"> -->
+		<style media="screen">
+		.dice {
+			border: 1px solid black;
+			border-radius: 5px;
+			width: 70px;
+			height: 70px;
+			position: relative;
+			display: none;
+		}
+
+		.active {
+			display: inline-block;
+		}
+
+		.dice_dot {
+			width: 16px;
+			height: 16px;
+			background-color: #000;
+			border-radius: 50%;
+			position: absolute;
+		}
+		/* Dice 1 */
+		#dice_number_1 > .dice_dot_1 {
+			top: 50%;
+			left: 50%;
+			margin-left: -8px;
+			margin-top: -8px;
+		}
+
+		/* Dice 2 */
+		#dice_number_2 > .dice_dot_1 {
+			top: 18%;
+			left: 18%;
+		}
+		#dice_number_2 > .dice_dot_2 {
+			bottom: 18%;
+			right: 18%;
+		}
+		/*Dice 3*/
+
+		#dice_number_3 > .dice_dot_1 {
+			top: 18%;
+			left: 18%;
+		}
+		#dice_number_3 > .dice_dot_2 {
+			bottom: 18%;
+			right: 18%;
+		}
+		#dice_number_3 > .dice_dot_3 {
+			top: 50%;
+			left: 50%;
+			margin-left: -8px;
+			margin-top: -8px;
+		}
+
+		/*Dice 4*/
+
+		#dice_number_4 > .dice_dot_1 {
+			top: 12%;
+			left: 12%;
+		}
+		#dice_number_4 > .dice_dot_2 {
+			bottom: 12%;
+			right: 12%;
+		}
+
+		#dice_number_4 > .dice_dot_3 {
+			top: 12%;
+			right: 12%;
+		}
+
+		#dice_number_4 > .dice_dot_4 {
+			bottom: 12%;
+			left: 12%;
+		}
+
+
+		/*Dice 5*/
+
+		#dice_number_5 > .dice_dot_1 {
+			top: 10%;
+			left: 10%;
+		}
+		#dice_number_5 > .dice_dot_2 {
+			bottom: 10%;
+			right: 10%;
+		}
+
+		#dice_number_5 > .dice_dot_3 {
+			top: 10%;
+			right: 10%;
+		}
+
+		#dice_number_5 > .dice_dot_4 {
+			bottom: 10%;
+			left: 10%;
+		}
+
+		#dice_number_5 > .dice_dot_5 {
+			top: 50%;
+			left: 50%;
+			margin-left: -8px;
+			margin-top: -8px;
+		}
+
+
+		/*Dice 6*/
+
+		#dice_number_6 > .dice_dot_1 {
+			top: 10%;
+			left: 10%;
+		}
+		#dice_number_6 > .dice_dot_2 {
+			bottom: 10%;
+			right: 10%;
+		}
+
+		#dice_number_6 > .dice_dot_3 {
+			top: 10%;
+			right: 10%;
+		}
+
+		#dice_number_6 > .dice_dot_4 {
+			bottom: 10%;
+			left: 10%;
+		}
+
+		#dice_number_6 > .dice_dot_5 {
+			top: 39%;
+			left: 10%;
+		}
+
+		#dice_number_6 > .dice_dot_6 {
+			top: 39%;
+			right: 10%;
+		}
+
+		</style>
+	</head>
+	<body>
+		<div class="diceThrow">
+			<h1 > Зар: </h1>
+
+			<div>
+				<button onClick='getRandomInt(1,6)' id='dice'> Хвърли зар </button>
+			</div>
+
+			<div id="dice_number_1" class="dice">
+				<div class="dice_dot dice_dot_1"></div>
+			</div>
+
+			<div id="dice_number_2" class="dice">
+				<div class="dice_dot dice_dot_1"></div>
+				<div class="dice_dot dice_dot_2"></div>
+			</div>
+
+			<div id="dice_number_3" class="dice">
+				<div class="dice_dot dice_dot_1"></div>
+				<div class="dice_dot dice_dot_2"></div>
+				<div class="dice_dot dice_dot_3"></div>
+			</div>
+
+			<div id="dice_number_4" class="dice">
+				<div class="dice_dot dice_dot_1"></div>
+				<div class="dice_dot dice_dot_2"></div>
+				<div class="dice_dot dice_dot_3"></div>
+				<div class="dice_dot dice_dot_4"></div>
+			</div>
+
+			<div id="dice_number_5" class="dice">
+				<div class="dice_dot dice_dot_1"></div>
+				<div class="dice_dot dice_dot_2"></div>
+				<div class="dice_dot dice_dot_3"></div>
+				<div class="dice_dot dice_dot_4"></div>
+				<div class="dice_dot dice_dot_5"></div>
+			</div>
+
+			<div id="dice_number_6" class="dice">
+				<div class="dice_dot dice_dot_1"></div>
+				<div class="dice_dot dice_dot_2"></div>
+				<div class="dice_dot dice_dot_3"></div>
+				<div class="dice_dot dice_dot_4"></div>
+				<div class="dice_dot dice_dot_5"></div>
+				<div class="dice_dot dice_dot_6"></div>
+			</div>
+		</div>
+
+
+		<hr />
+
+		<div class="cards">
+			<h1> Карти: </h1>
+
+			<span>
+				<button onClick='drawCard("good")' id='dice'> Тегли Положителна карта </button>
+				<button onClick='drawCard("bad")' id='dice'> Тегли Кофти карта </button>
+				<button onClick='drawCard("neutral")' id='dice'> Тегли ? карта </button>
+			</span>
+			<span>
+				<h1> Ти изтегли: <span id='cardResultBox'> </span></h1>
+			</span>
+		</div>
+
+
+		<script>
+			let dice = 0;
+			let card = 0;
+			let cardResultBox = document.getElementById('cardResultBox')
+
+			let getRandomInt = function(min, max) {
+				let allDices = document.getElementsByClassName('dice')
+
+				for (let i = 0; i < allDices.length; i++) {
+					allDices[i].classList.remove("active")
+				}
+
+				min = Math.ceil(min);
+				max = Math.floor(max);
+				dice = Math.floor(Math.random() * (max - min)) + min;
+				let diceResult = 'dice_number_' + dice;
+				diceResult.toString();
+				let el = document.getElementById(diceResult);
+				el.classList.add("active");
+			}
+
+			let cards = {
+				good: ['+ 3 бира', '+ 1 бира', '+ 2 бира'],
+				bad: ['- 3 бира', '- 1 бира', '- 2 бира'],
+				neutral: ['Човека от ляво на теб пие 2 бира', 'Синият пропуска ход', 'Зеленият + 5 бира', 'Пий на екс!']
+			}
+
+			let drawCard = function(cardType) {
+				let min = 0;
+				let max = cards[cardType].length;
+				cardNumber = Math.floor(Math.random() * (max - min)) + min;
+				card = cards[cardType][cardNumber];
+				cardResultBox.innerHTML = card;
+			}
+
+		</script>
+
+	</body>
+</html>

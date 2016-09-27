@@ -1,0 +1,135 @@
+.dice {
+	border: 1px solid black;
+	border-radius: 5px;
+	width: 70px;
+	height: 70px;
+	position: relative;
+	display: none;
+}
+
+.active {
+	display: inline-block;
+}
+
+.dice_dot {
+	width: 16px;
+	height: 16px;
+	background-color: #000;
+	border-radius: 50%;
+	position: absolute;
+}
+/* Dice 1 */
+#dice_number_1 > .dice_dot_1 {
+	top: 50%;
+	left: 50%;
+	margin-left: -8px;
+	margin-top: -8px;
+}
+
+/* Dice 2 */
+#dice_number_2 > .dice_dot_1 {
+	top: 18%;
+	left: 18%;
+}
+#dice_number_2 > .dice_dot_2 {
+	bottom: 18%;
+	right: 18%;
+}
+/*Dice 3*/
+
+#dice_number_3 > .dice_dot_1 {
+	top: 18%;
+	left: 18%;
+}
+#dice_number_3 > .dice_dot_2 {
+	bottom: 18%;
+	right: 18%;
+}
+#dice_number_3 > .dice_dot_3 {
+	top: 50%;
+	left: 50%;
+	margin-left: -8px;
+	margin-top: -8px;
+}
+
+/*Dice 4*/
+
+#dice_number_4 > .dice_dot_1 {
+	top: 12%;
+	left: 12%;
+}
+#dice_number_4 > .dice_dot_2 {
+	bottom: 12%;
+	right: 12%;
+}
+
+#dice_number_4 > .dice_dot_3 {
+	top: 12%;
+	right: 12%;
+}
+
+#dice_number_4 > .dice_dot_4 {
+	bottom: 12%;
+	left: 12%;
+}
+
+
+/*Dice 5*/
+
+#dice_number_5 > .dice_dot_1 {
+	top: 10%;
+	left: 10%;
+}
+#dice_number_5 > .dice_dot_2 {
+	bottom: 10%;
+	right: 10%;
+}
+
+#dice_number_5 > .dice_dot_3 {
+	top: 10%;
+	right: 10%;
+}
+
+#dice_number_5 > .dice_dot_4 {
+	bottom: 10%;
+	left: 10%;
+}
+
+#dice_number_5 > .dice_dot_5 {
+	top: 50%;
+	left: 50%;
+	margin-left: -8px;
+	margin-top: -8px;
+}
+
+
+/*Dice 6*/
+
+#dice_number_6 > .dice_dot_1 {
+	top: 10%;
+	left: 10%;
+}
+#dice_number_6 > .dice_dot_2 {
+	bottom: 10%;
+	right: 10%;
+}
+
+#dice_number_6 > .dice_dot_3 {
+	top: 10%;
+	right: 10%;
+}
+
+#dice_number_6 > .dice_dot_4 {
+	bottom: 10%;
+	left: 10%;
+}
+
+#dice_number_6 > .dice_dot_5 {
+	top: 39%;
+	left: 10%;
+}
+
+#dice_number_6 > .dice_dot_6 {
+	top: 39%;
+	right: 10%;
+}
